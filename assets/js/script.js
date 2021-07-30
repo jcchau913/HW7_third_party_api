@@ -17,24 +17,18 @@ $(document).ready(function () {
         else {
             strTime = x + " AM";
         }
+        $(".container").append("<div id='hour" + x + "' class='row time-block'>");
+        $("#hour" + x).append("<div class='col-md-1 hour'>" + strTime + "</div>");
         if (x<hourNow) {
-            $(".container").append("<div id='hour" + x + "' class='row time-block'>");
-            $("#hour" + x).append("<div class='col-md-1 hour'>" + strTime + "</div>");
             $("#hour" + x).append("<textarea class='col-md-10 description past'></textarea>")
-            $("#hour" + x).append("<button class='btn saveBtn col-md-1'><i class='fas fa-save'></i></button></div>");     
         }
         else if (x===hourNow) {
-            $(".container").append("<div id='hour" + x + "' class='row time-block'>");
-            $("#hour" + x).append("<div class='col-md-1 hour'>" + strTime + "</div>");
             $("#hour" + x).append("<textarea class='col-md-10 description present'></textarea>")
-            $("#hour" + x).append("<button class='btn saveBtn col-md-1'><i class='fas fa-save'></i></button></div>");     
         }
         else {  
-            $(".container").append("<div id='hour" + x + "' class='row time-block'>");
-            $("#hour" + x).append("<div class='col-md-1 hour'>" + strTime + "</div>");
             $("#hour" + x).append("<textarea class='col-md-10 description future'></textarea>")
-            $("#hour" + x).append("<button class='btn saveBtn col-md-1'><i class='fas fa-save'></i></button></div>");     
         }
+        $("#hour" + x).append("<button class='btn saveBtn col-md-1'><i class='fas fa-save'></i></button></div>");           
     }
     $("#hour9 .description").val(localStorage.getItem("hour9"));
     $("#hour10 .description").val(localStorage.getItem("hour10"));
