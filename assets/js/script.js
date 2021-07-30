@@ -32,9 +32,9 @@ $(document).ready(function () {
         $("#hour" + x + " .description").val(localStorage.getItem("hour" + x));
     }
     $(".saveBtn").on("click", function () {
-        var text = $(this).siblings(".description").val();
-        var time = $(this).parent().attr("id");
-        localStorage.setItem(time, text);
+        var strText = $(this).siblings(".description").val();
+        var timeId = $(this).parent().attr("id");
+        localStorage.setItem(timeId, strText);
     })
 
 })
