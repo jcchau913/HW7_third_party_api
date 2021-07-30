@@ -29,8 +29,6 @@ $(document).ready(function () {
             $("#hour" + x).append("<textarea class='col-md-10 description future'></textarea>")
         }
         $("#hour" + x).append("<button class='btn saveBtn col-md-1'><i class='fas fa-save'></i></button></div>");           
-    }
-    for (x=9; x<=17; x++) {
         $("#hour" + x + " .description").val(localStorage.getItem("hour" + x));
     }
     $(".saveBtn").on("click", function () {
